@@ -10,7 +10,7 @@ export default class ComponentsBuilder{
 
     #baseComponent(){
         return{
-            border: '',
+            border: 'line',
             mouse: true,
             keys: true,
             top: 0,
@@ -28,7 +28,7 @@ export default class ComponentsBuilder{
             title
         })
 
-        this.#screen.key(['escape', 'C-c'], process.exit(0))
+        this.#screen.key(['escape', 'c-c'], () => process.exit(0))
 
         return this
     }
@@ -73,7 +73,7 @@ export default class ComponentsBuilder{
             align: 'left',
             width: '50%',
             height: '90%',
-            items: ['{bold}Messanger{/}']
+            items: ['{bold}Messanger{/bold}']
         })
 
         return this

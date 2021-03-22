@@ -16,7 +16,7 @@ export default class terminalController{
     #onMessageReceived({screen, chat}){
         return msg => {
             const {message, userName} = msg
-            chat.addItem(`{bold}${userName}{/}: ${msg}`)
+            chat.addItem(`{bold}${userName}{/bold}: ${message}`)
             screen.render()
         }
     }
@@ -34,7 +34,7 @@ export default class terminalController{
         .build()
 
         this.#registerEvents(eventEmitter, components)
-
+        
         setInterval(() => {
             eventEmitter.emit('message:received', {message: 'alou', userName: 'Natron'})
         }, 2000);
